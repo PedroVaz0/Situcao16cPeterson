@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini-Game de Geografia</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Mini-Game: Geografia</h1>
+<p>Arraste os países para os seus continentes corretos!</p>
+
+<div class="game-container">
+  <div>
+    <div class="section-title">Países Disponíveis</div>
+    <div class="countries-pool" id="pool" ondragover="allowDrop(event)" ondrop="dropToPool(event)">
+      <div class="country-item" draggable="true" ondragstart="drag(event)" id="c-brasil" data-continent="america">Brasil</div>
+      <div class="country-item" draggable="true" ondragstart="drag(event)" id="c-japao" data-continent="asia">Japão</div>
+      <div class="country-item" draggable="true" ondragstart="drag(event)" id="c-franca" data-continent="europa">França</div>
+      <div class="country-item" draggable="true" ondragstart="drag(event)" id="c-egito" data-continent="africa">Egito</div>
+      <div class="country-item" draggable="true" ondragstart="drag(event)" id="c-australia" data-continent="oceania">Austrália</div>
+    </div>
+  </div>
+
+  <div class="continents-grid">
+    <div class="continent-dropzone" id="america" ondragover="allowDrop(event)" ondrop="dropToContinent(event)">
+      <h3>América</h3>
+    </div>
+    <div class="continent-dropzone" id="asia" ondragover="allowDrop(event)" ondrop="dropToContinent(event)">
+      <h3>Ásia</h3>
+    </div>
+    <div class="continent-dropzone" id="europa" ondragover="allowDrop(event)" ondrop="dropToContinent(event)">
+      <h3>Europa</h3>
+    </div>
+    <div class="continent-dropzone" id="africa" ondragover="allowDrop(event)" ondrop="dropToContinent(event)">
+      <h3>África</h3>
+    </div>
+    <div class="continent-dropzone" id="oceania" ondragover="allowDrop(event)" ondrop="dropToContinent(event)">
+      <h3>Oceania</h3>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button onclick="checkAnswers()">Verificar Respostas</button>
+  </div>
+  
+  <div id="result"></div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
